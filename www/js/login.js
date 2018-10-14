@@ -7,7 +7,6 @@ $(document).ready(function () {
 
     function navegar() {
         $("#panelNavegacion").load("citas.html");   
-        $("#panelNavegacion").removeClass("form-signin");
-        $('body').removeClass("estiloBodyLogin");
+                
     }
 });
