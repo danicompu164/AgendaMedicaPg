@@ -1,55 +1,125 @@
 <script type="text/javascript" src="js/citas.js"></script>
 
+<nav class="navbar navbar-dark bg-dark barra-navegacion-flotante">
+    <a class="navbar-brand" href="#" id="btnMostrarMenu">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+    </a>
+</nav>
 
-<div class="accordion" id="accordionExample">
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Cita de prueba 1
-                </button>
-            </h5>
+<div id="modalMenu" class="modal-menu">
+    <div class="menu">
+        <div class="boton-cerrar-menu">
+            <a class="navbar-brand" href="#" id="closeModalMenu">
+                <span class="fa fa-window-close" aria-hidden="true"></span>
+            </a>
         </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-                El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
-                y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja, y
-                el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+    </div>
+</div>
+
+<div class="espacio-div-superior">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Cita de prueba 1
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                    aria-controls="collapseTwo">
-                    Cita de prueba 2
-                </button>
-            </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-                El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
-                y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja, y
-                el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Cita de prueba 2
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                    aria-controls="collapseThree">
-                    Cita de prueba 3
-                </button>
-            </h5>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Cita de prueba 3
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
+            </div>
         </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-                El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
-                y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja, y
-                el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Cita de prueba 4
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Cita de prueba 5
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        Cita de prueba 6
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    El episodio de atención se inicia con la razón por la que el paciente consulta al médico. Es un periodo de comunicación directa
+                    y franca, en el que el paciente transmite su situación o dudas, donde da sus explicaciones y se relaja,
+                    y el médico realiza un escucha activa, creando un clima de serenidad y seguridad, para captar sus necesidades.
+                </div>
             </div>
         </div>
     </div>

@@ -9,4 +9,6 @@ $(document).ready(function () {
         $("#panelNavegacion").load("citas.html");   
                 
     }
+
+    
 });
