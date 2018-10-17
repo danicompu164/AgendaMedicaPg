@@ -6,10 +6,11 @@
     position: fixed;
     width: 100%;
     z-index: 1000;
+    padding-top: 30px;
 }
 
 .espacio-div-superior{
-    padding-top: 50px;
+    padding-top: 80px;
 }
 
 .modal-menu{
@@ -21,14 +22,14 @@
     display: none;
 }
 
-.modal-menu .menu{
+.menu{
     position:absolute;
     height: 100%;    
     left: 0px;
     z-index: 1501;
     width: 80%;
     background-color: #f5f5f5;
-    
+       
 }
 
 .boton-cerrar-menu{
