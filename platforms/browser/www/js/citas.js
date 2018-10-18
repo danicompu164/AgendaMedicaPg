@@ -1,11 +1,17 @@
 $(document).ready(function () {
-    
-    $("#btnverdetalles").click(function () {        
-        $("#panelNavegacion").load("detalles.html");
+    $(function () {
+        $("#nombreMedico").html(usuarioEnvio.nombre + ' ' + usuarioEnvio.apellido);
+
     });
 
-    
 
-   
+    $("#btnverdetalles").click(function () {
+        $("#panelNavegacion").load("detalles.html");
+
+    });
+
+
+
+
 
 });

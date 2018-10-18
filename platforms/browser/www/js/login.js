@@ -26,6 +26,7 @@ $(document).ready(function () {
                 codigoRespuesta=data.respuesta.codigo;
                 mensaje=data.respuesta.mensaje;
                 if(codigoRespuesta==codigoOk){
+                    usuarioEnvio=data.loginEnvio.usuarioEnvio;
                     navegar();
                 }else{                    
                     $('#exampleModalCenter').modal('show');
