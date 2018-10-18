@@ -8,17 +8,19 @@ $(document).ready(function () {
             type: 'POST',
             data: JSON.stringify({ "login": "1818181818", "password": "4d6db86afa1528fbe5248db396b65119b7c177de" }),
             dataType: 'json',
+            contentType: "application/json; charset=utf-8",
             error: function (jqXHR, text_status, strError) {
-                alert('no connection ' + strError);
+                alert('No se pudo conectar ' + strError);
             },
             timeout: 90000,
             async: false,
             success: function (data) {
 
-                console.log("ingresa a conuslta");
+                console.log("datos ==="+data);
+                navegar();
             }
         });
-        navegar();
+        
     });
 
     function navegar() {
