@@ -1,12 +1,20 @@
-
+const URL_LOGIN="http://vmi195100.contaboserver.net:8095/vlipcode-salud-ws-adm/webresources/login/obtenerPorCredencialesMovil";
+const codigoOk="1";
+const codigoErrorLogin="5";
 $(document).ready(function () {
 
     $("#btnaceptar").click(function () {
+            var usuario=$("#txtusuario").val();
+            var password=$("#txtpassword").val();
+            var passwordEncriptado=sha1(password);
+            var codigoRespuesta;
+            var mensaje;
+           
 
         $.ajax({
-            url: 'http://vmi195100.contaboserver.net:8095/vlipcode-salud-ws-adm/webresources/login/obtenerPorCredencialesMovil',
+            url: URL_LOGIN,
             type: 'POST',
-            data: JSON.stringify({ "login": "1818181818", "password": "4d6db86afa1528fbe5248db396b65119b7c177de" }),
+            data: JSON.stringify({ "login": usuario, "password": passwordEncriptado }),
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             error: function (jqXHR, text_status, strError) {
@@ -14,10 +22,15 @@ $(document).ready(function () {
             },
             timeout: 90000,
             async: false,
-            success: function (data) {
-
-                console.log("datos ==="+data);
-                navegar();
+            success: function (data) {               
+                codigoRespuesta=data.respuesta.codigo;
+                mensaje=data.respuesta.mensaje;
+                if(codigoRespuesta==codigoOk){
+                    navegar();
+                }else{                    
+                    alert(mensaje);
+                }
+                
             }
         });
         
