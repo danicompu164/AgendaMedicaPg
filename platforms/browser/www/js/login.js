@@ -28,7 +28,7 @@ $(document).ready(function () {
                 if(codigoRespuesta==codigoOk){
                     navegar();
                 }else{                    
-                    alert(mensaje);
+                    $('#exampleModalCenter').modal('show');
                 }
                 
             }
