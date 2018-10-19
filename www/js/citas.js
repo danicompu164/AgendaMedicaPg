@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(function () {
-        $("#nombreMedico").html(usuarioEnvio.nombre + ' ' + usuarioEnvio.apellido);
+        $("#nombreMedico").html(usuarioEnvio.nombre);
 
     });
 

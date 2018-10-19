@@ -1,15 +1,15 @@
-const URL_LOGIN="http://vmi195100.contaboserver.net:8095/vlipcode-salud-ws-adm/webresources/login/obtenerPorCredencialesMovil";
-const codigoOk="1";
-const codigoErrorLogin="5";
+const URL_LOGIN = "http://vmi195100.contaboserver.net:8095/vlipcode-salud-ws-adm/webresources/login/obtenerPorCredencialesMovil";
+const codigoOk = "1";
+const codigoErrorLogin = "5";
 $(document).ready(function () {
 
     $("#btnaceptar").click(function () {
-            var usuario=$("#txtusuario").val();
-            var password=$("#txtpassword").val();
-            var passwordEncriptado=sha1(password);
-            var codigoRespuesta;
-            var mensaje;
-           
+        var usuario = $("#txtusuario").val();
+        var password = $("#txtpassword").val();
+        var passwordEncriptado = sha1(password);
+        var codigoRespuesta;
+        var mensaje;
+
 
         $.ajax({
             url: URL_LOGIN,
@@ -22,23 +22,38 @@ $(document).ready(function () {
             },
             timeout: 90000,
             async: false,
-            success: function (data) {               
-                codigoRespuesta=data.respuesta.codigo;
-                mensaje=data.respuesta.mensaje;
-                if(codigoRespuesta==codigoOk){
-                    usuarioEnvio=data.loginEnvio.usuarioEnvio;
+            success: function (data) {
+                codigoRespuesta = data.respuesta.codigo;
+                mensaje = data.respuesta.mensaje;
+                if (codigoRespuesta == codigoOk) {
+                    usuarioEnvio = data.loginEnvio.usuarioEnvio;
+                    tokenAutorizacion = data.loginEnvio.usuarioEnvio.tokenAutorizacion;
+                    listaSucursal = data.loginEnvio.listaSucursal;
+                    listaServicioWeb = data.listaServicioWeb;
+
                     navegar();
-                }else{                    
+                } else {
                     $('#exampleModalCenter').modal('show');
                 }
-                
+
             }
         });
-        
+
     });
 
     function navegar() {
-        $("#panelNavegacion").load("citas.html");
+        var contador = 0;
+        $.each(listaSucursal, function (i, value) {
+
+            sucursal = value;
+            contador++;
+        });
+        if (contador > 1) {
+            $("#panelNavegacion").load("sucursales.html");
+        } else {
+            $("#panelNavegacion").load("citas.html");
+        }
+
 
     }
 
