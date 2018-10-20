@@ -40,3 +40,28 @@ var respuesta = {
     "mensaje": ""
 }
 
+var citasEnvio = {
+    "idSucursal": "",
+    "idUsuarioMedico": "",
+    "fecha": "",
+    "tokenAutorizacion": ""
+
+}
+
+var agendaPaciente = {
+    "catalogoEstado": "",
+    "catalogoOrigen": "",
+    "email": "",
+    "fecha": "",
+    "fechaNacimiento": "",
+    "hora": "",
+    "id": "",
+    "idHistoria": "",
+    "idPersona": "",
+    "idTurno": "",
+    "numeroDocumento": "",
+    "paciente": "",
+    "sexo": "",
+    "telefono": ""
+}
+

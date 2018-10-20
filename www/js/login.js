@@ -1,6 +1,4 @@
-const URL_LOGIN = "http://vmi195100.contaboserver.net:8095/vlipcode-salud-ws-adm/webresources/login/obtenerPorCredencialesMovil";
-const codigoOk = "1";
-const codigoErrorLogin = "5";
+
 $(document).ready(function () {
 
     $("#btnaceptar").click(function () {
@@ -29,8 +27,8 @@ $(document).ready(function () {
                     usuarioEnvio = data.loginEnvio.usuarioEnvio;
                     tokenAutorizacion = data.loginEnvio.usuarioEnvio.tokenAutorizacion;
                     listaSucursal = data.loginEnvio.listaSucursal;
-                    listaServicioWeb = data.listaServicioWeb;
-
+                    listaServicioWeb = data.loginEnvio.listaServicioWeb;
+                  
                     navegar();
                 } else {
                     $('#exampleModalCenter').modal('show');
@@ -56,6 +54,8 @@ $(document).ready(function () {
 
 
     }
+
+
 
 
 });
