@@ -88,6 +88,9 @@ $(document).ready(function () {
             htmlCita = htmlCita + "</div>";
             htmlCita = htmlCita + "<div>";
             htmlCita = htmlCita + "Teléfono: " + agendaPaciente.telefono;
+            htmlCita = htmlCita + " <a class='navbar-brand' href='tel:"+agendaPaciente.telefono+"' id='btnllamar'>";
+            htmlCita = htmlCita + "<span class='fa fa-phone' aria-hidden='true'></span>";
+            htmlCita = htmlCita + "</a>";
             htmlCita = htmlCita + "</div>";
             htmlCita = htmlCita + "</div>";
             htmlCita = htmlCita + "</div>";
