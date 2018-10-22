@@ -11,10 +11,10 @@ $(document).ready(function () {
             sucursal = value;
             htmlSucursales = htmlSucursales + "<a href='#' class='list-group-item list-group-item-action' onclick='cargarCitas("+JSON.stringify(sucursal)+")'>";
             htmlSucursales = htmlSucursales + sucursal.nombre;
-            htmlSucursales = htmlSucursales + "</a>";
-            console.log(htmlSucursales);
-            $("#listaSucursales").append(htmlSucursales);
+            htmlSucursales = htmlSucursales + "</a>";          
+            
         });
+        $("#listaSucursales").html(htmlSucursales);
 
     }
 
