@@ -1,19 +1,19 @@
-.div-alto-cien{
+.div-alto-cien {
     height: 100%;
 }
 
-.barra-navegacion-flotante{
+.barra-navegacion-flotante {
     position: fixed;
     width: 100%;
     z-index: 1000;
     padding-top: 30px;
 }
 
-.espacio-div-superior{
+.espacio-div-superior {
     padding-top: 80px;
 }
 
-.modal-menu{
+.modal-menu {
     height: 100%;
     width: 100%;
     z-index: 1500;
@@ -22,18 +22,23 @@
     display: none;
 }
 
-.menu{
-    position:absolute;
-    height: 100%;    
+.menu {
+    position: absolute;
+    height: 100%;
     left: 0px;
     z-index: 1501;
     width: 80%;
     background-color: #f5f5f5;
-       
 }
 
-.boton-cerrar-menu{
+.boton-cerrar-menu {
     text-align: right;
     padding-right: 10px;
 }
 
+.estilo-spinner {
+    top: 45%;
+    left: 45%;
+    z-index: 2000;
+    position: absolute;
+}

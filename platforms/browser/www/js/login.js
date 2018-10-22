@@ -8,7 +8,6 @@ $(document).ready(function () {
         var codigoRespuesta;
         var mensaje;
 
-
         $.ajax({
             url: URL_LOGIN,
             type: 'POST',
@@ -23,6 +22,7 @@ $(document).ready(function () {
             success: function (data) {
                 codigoRespuesta = data.respuesta.codigo;
                 mensaje = data.respuesta.mensaje;
+                
                 if (codigoRespuesta == codigoOk) {
                     usuarioEnvio = data.loginEnvio.usuarioEnvio;
                     tokenAutorizacion = data.loginEnvio.usuarioEnvio.tokenAutorizacion;
@@ -43,7 +43,7 @@ $(document).ready(function () {
         var contador = 0;
         $.each(listaSucursal, function (i, value) {
 
-            sucursal = value;
+            sucursal = value;            
             contador++;
         });
         if (contador > 1) {
