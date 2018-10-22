@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $(function () {
         $("#nombreMedico").html(usuarioEnvio.nombre);
+       
         cargarSucursales();
     });
 
@@ -17,6 +18,8 @@ $(document).ready(function () {
 
     }
 
+   
+
 
 
 });
@@ -26,5 +29,13 @@ function cargarCitas(sucursalSeleccionada) {
     $(function () {         
         sucursal=sucursalSeleccionada;        
         $("#panelNavegacion").load("citas.html");
+    });
+}
+
+function salir() {
+    $(function () {
+        tokenAutorizacion = null;
+        $('#modalMenu').modal('hide');
+        $("#panelNavegacion").load("login.html");
     });
 }
