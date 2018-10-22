@@ -42,3 +42,7 @@
     z-index: 2000;
     position: absolute;
 }
+
+.espacio-izquierdo-contenido-citas{
+    padding-left: 12px;
+}

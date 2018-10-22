@@ -65,3 +65,10 @@ var agendaPaciente = {
     "telefono": ""
 }
 
+
+var cancelarCitaEnvio = {
+    "id": "",
+    "idTurno": "",
+    "tokenAutorizacion": ""
+}
+

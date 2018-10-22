@@ -5,10 +5,10 @@ $(document).ready(function () {
     });
 
     function cargarSucursales() {
-        var htmlSucursales;
+        var htmlSucursales = "";
         $.each(listaSucursal, function (i, value) {
             sucursal = value;
-            htmlSucursales = htmlSucursales + "<a href='#' class='list-group-item list-group-item-action'>";
+            htmlSucursales = htmlSucursales + "<a href='#' class='list-group-item list-group-item-action' onclick='cargarCitas("+JSON.stringify(sucursal)+")'>";
             htmlSucursales = htmlSucursales + sucursal.nombre;
             htmlSucursales = htmlSucursales + "</a>";
             console.log(htmlSucursales);
@@ -20,3 +20,11 @@ $(document).ready(function () {
 
 
 });
+
+function cargarCitas(sucursalSeleccionada) {
+   
+    $(function () {         
+        sucursal=sucursalSeleccionada;        
+        $("#panelNavegacion").load("citas.html");
+    });
+}
