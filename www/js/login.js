@@ -1,14 +1,19 @@
 
 $(document).ready(function () {
 
-    $("#btnaceptar").click(function () {    
-        $("#spinner").show();
+    $("#btnaceptar").click(function (e) {
+
+
+
         var usuario = $("#txtusuario").val();
         var password = $("#txtpassword").val();
         var passwordEncriptado = sha1(password);
         var codigoRespuesta;
         var mensaje;
-        
+        if (usuario === '' || password === '') {
+            return;
+        }
+        $("#spinner").show();
         $.ajax({
             url: URL_LOGIN,
             type: 'POST',
@@ -21,21 +26,21 @@ $(document).ready(function () {
             timeout: 90000,
             async: true,
             success: function (data) {
-                
+
                 codigoRespuesta = data.respuesta.codigo;
                 mensaje = data.respuesta.mensaje;
-                
+
                 if (codigoRespuesta == codigoOk) {
                     usuarioEnvio = data.loginEnvio.usuarioEnvio;
                     tokenAutorizacion = data.loginEnvio.usuarioEnvio.tokenAutorizacion;
                     listaSucursal = data.loginEnvio.listaSucursal;
                     listaServicioWeb = data.loginEnvio.listaServicioWeb;
-                  
+
                     navegar();
                 } else {
                     $('#exampleModalCenter').modal('show');
                 }
-
+                $("#spinner").hide();
             }
         });
 
@@ -45,16 +50,16 @@ $(document).ready(function () {
         var contador = 0;
         $.each(listaSucursal, function (i, value) {
 
-            sucursal = value;            
+            sucursal = value;
             contador++;
         });
         if (contador > 1) {
-            
+
             $("#panelNavegacion").load("sucursales.html");
         } else {
             $("#panelNavegacion").load("citas.html");
         }
-        $("#spinner").hide();
+
 
 
     }
