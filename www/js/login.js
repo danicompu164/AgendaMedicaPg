@@ -1,13 +1,14 @@
 
 $(document).ready(function () {
 
-    $("#btnaceptar").click(function () {
+    $("#btnaceptar").click(function () {    
+        $("#spinner").show();
         var usuario = $("#txtusuario").val();
         var password = $("#txtpassword").val();
         var passwordEncriptado = sha1(password);
         var codigoRespuesta;
         var mensaje;
-
+        
         $.ajax({
             url: URL_LOGIN,
             type: 'POST',
@@ -18,8 +19,9 @@ $(document).ready(function () {
                 alert('No se pudo conectar ' + strError);
             },
             timeout: 90000,
-            async: false,
+            async: true,
             success: function (data) {
+                
                 codigoRespuesta = data.respuesta.codigo;
                 mensaje = data.respuesta.mensaje;
                 
@@ -47,10 +49,12 @@ $(document).ready(function () {
             contador++;
         });
         if (contador > 1) {
+            
             $("#panelNavegacion").load("sucursales.html");
         } else {
             $("#panelNavegacion").load("citas.html");
         }
+        $("#spinner").hide();
 
 
     }

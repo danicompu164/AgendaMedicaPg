@@ -36,11 +36,12 @@
     padding-right: 10px;
 }
 
-.estilo-spinner {
+.spinner {
     top: 45%;
     left: 45%;
     z-index: 2000;
     position: absolute;
+    display: none;
 }
 
 .espacio-izquierdo-contenido-citas{

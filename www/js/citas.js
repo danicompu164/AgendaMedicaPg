@@ -8,6 +8,7 @@ $(document).ready(function () {
 
 
     function cargarAgenda() {
+        $("#spinner").show();
         var urlServicio = obtenerServicioWebPorCatalogo(listaServicioWeb, LISTAR_CITAS_POR_MEDICO);
 
         citasEnvio.idSucursal = sucursal.id;
@@ -25,7 +26,7 @@ $(document).ready(function () {
                 alert('No se pudo conectar ' + strError);
             },
             timeout: 90000,
-            async: false,
+            async: true,
             success: function (data) {
                 codigoRespuesta = data.respuesta.codigo;
                 mensaje = data.respuesta.mensaje;
@@ -75,6 +76,7 @@ $(document).ready(function () {
     }
 
     $("#btnConfirmaEliminar").click(function () {
+        $("#spinner").show();
 
         var urlServicio = obtenerServicioWebPorCatalogo(listaServicioWeb, CANCELAR_CITAS_POR_MEDICO);
 
@@ -88,7 +90,7 @@ $(document).ready(function () {
                 alert('No se pudo conectar ' + strError);
             },
             timeout: 90000,
-            async: false,
+            async: true,
             success: function (data) {
                 codigoRespuesta = data.respuesta.codigo;
                 mensaje = data.respuesta.mensaje;
@@ -191,7 +193,7 @@ function cargarCitas(listaAgendaPaciente) {
 
     });
     $("#citasAcordion").html(htmlCita);
-
+    $("#spinner").hide();
 
 }
 

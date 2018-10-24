@@ -25,10 +25,11 @@ $(document).ready(function () {
 });
 
 function cargarCitas(sucursalSeleccionada) {
-   
+    $("#spinner").show();
     $(function () {         
         sucursal=sucursalSeleccionada;        
         $("#panelNavegacion").load("citas.html");
+        $("#spinner").hide();
     });
 }
 
