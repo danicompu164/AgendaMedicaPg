@@ -1,23 +1,46 @@
 <script type="text/javascript" src="js/sucursales.js"></script>
 
-<nav class="navbar navbar-dark bg-dark barra-navegacion-flotante">
-    <h3 style="color:white">Sucursales</h3>
+<nav class="navbar navbar-dark bg-primary barra-navegacion-flotante">
+
     <a class="navbar-brand" href="#" id="btnMostrarMenu" data-toggle="modal" data-target="#modalMenu">
         <span class="fa fa-bars" aria-hidden="true"></span>
     </a>
+    <h3 style="color:white">Sucursales</h3>
 
 </nav>
 
 <div id="modalMenu" class="modal slide show" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="menu" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="nombreMedico"> </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header fondo-cabecera">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:white">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span class="fa fa-user-circle" aria-hidden="true" style="font-size: 50px"></span>
+                        </div>
+                        <div class="col-sm">
+                            <h5 class="modal-title" id="nombreMedico"> </h5>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
             </div>
-            <div class="modal-body" style="height: -webkit-fill-available;">
+            <div class="modal-body" style="height: -webkit-fill-available; font-size: 20px">
                 <ul class="nav flex-column" id="itemsMenu">
                     <li class='nav-item'>
                         <a class='nav-link active' href='#' id='linkSalir' onclick='salir()'>

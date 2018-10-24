@@ -178,12 +178,12 @@ function cargarCitas(listaAgendaPaciente) {
         htmlCita = htmlCita + " <div class='row'>";
         htmlCita = htmlCita + "<div class='col' style='text-align:right'>";
         htmlCita = htmlCita + " <a href='tel:" + agendaPaciente.telefono + "'  >";
-        htmlCita = htmlCita + "<i class='fa fa-phone' aria-hidden='true'></i>";
+        htmlCita = htmlCita + "<i class='fa fa-phone fa-lg' aria-hidden='true'></i>";
         htmlCita = htmlCita + "</a>";
         htmlCita = htmlCita + "</div>";
         htmlCita = htmlCita + "<div class='col' style='text-align:left'>";
         htmlCita = htmlCita + " <a href='#' onclick='cancelarCita(" + JSON.stringify(agendaPaciente) + ")'>";
-        htmlCita = htmlCita + "<i class='fa fa-trash-o' aria-hidden='true'></i>";
+        htmlCita = htmlCita + "<i class='fa fa-trash-o fa-lg' aria-hidden='true'></i>";
         htmlCita = htmlCita + "</a>";
         htmlCita = htmlCita + "</div>";
         htmlCita = htmlCita + "</div>";

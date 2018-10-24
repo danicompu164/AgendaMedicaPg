@@ -49,7 +49,12 @@
 }
 
 .color-texto{
-    color: #007eff;
+    color: #1483ae;
+}
+
+.fondo-cabecera{
+    color: white;
+    background-color: #1483ae;
 }
 
 
