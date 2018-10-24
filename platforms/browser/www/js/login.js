@@ -11,6 +11,7 @@ $(document).ready(function () {
         var codigoRespuesta;
         var mensaje;
         if (usuario === '' || password === '') {
+            $("#modalValidacionCampos").modal("show");
             return;
         }
         $("#spinner").show();
