@@ -12,8 +12,8 @@ $(document).ready(function () {
         var urlServicio = obtenerServicioWebPorCatalogo(listaServicioWeb, LISTAR_CITAS_POR_MEDICO);
 
         citasEnvio.idSucursal = sucursal.id;
-        //citasEnvio.fecha = formatearDate(new Date());
-        citasEnvio.fecha = "2018-10-21";
+        citasEnvio.fecha = formatearDate(new Date());
+        //citasEnvio.fecha = "2018-10-21";
         citasEnvio.tokenAutorizacion = tokenAutorizacion;
         citasEnvio.idUsuarioMedico = tokenAutorizacion.idUsuario;
 
