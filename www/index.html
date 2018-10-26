@@ -43,7 +43,8 @@
 
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
-            console.log(navigator.vibrate);
+            alert(navigator.vibrate);
+            navigator.vibrate(3000);
         }
             //$("#panelNavegacion").load("login.html");
 
