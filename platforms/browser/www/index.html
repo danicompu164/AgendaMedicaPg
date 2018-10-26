@@ -15,20 +15,22 @@
     <link href="css/signin.css" rel="stylesheet">
     <link href="css/estilos-componentes.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    
+
     <title>Agenda</title>
 </head>
 
-<body >
+<body>
+    <div class="div-alto-cien splash" id="splash">
+        <img class="mb-4" src="./img/logo_horizontal.png" alt="" width="180" >
+    </div>
 
-    
     <div id="panelNavegacion" class="div-alto-cien">
 
     </div>
     <div class="spinner" id="spinner">
         <img class="mb-3" src="./img/spinner2.gif" alt="" width="50">
     </div>
-   
+
 
 
 
@@ -41,8 +43,9 @@
     <script type="text/javascript" src="js/objetos.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#panelNavegacion").load("login.html");   
-            console.log("llama a login------------------------");
+            $("#splash").hide();
+            $("#panelNavegacion").load("login.html");
+
         });
     </script>
 

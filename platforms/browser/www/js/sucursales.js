@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(function () {
-        $("#nombreMedico").html(usuarioEnvio.nombre);
+        $("#nombreMedico").html("Hola "+usuarioEnvio.nombre);
        
         cargarSucursales();
     });
