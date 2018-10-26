@@ -1,46 +1,16 @@
+var fechaSeleccionada;
+var fechasDisponibles = new Array();
 
 $(document).ready(function () {
     $(function () {
-        $("#nombreMedico").html(usuarioEnvio.nombre);
+        $("#nombreMedico").html("Hola "+usuarioEnvio.nombre);
         cargarMenu();
-        cargarAgenda();
+
+        cargarFechas();
     });
 
 
-    function cargarAgenda() {
-        $("#spinner").show();
-        var urlServicio = obtenerServicioWebPorCatalogo(listaServicioWeb, LISTAR_CITAS_POR_MEDICO);
 
-        citasEnvio.idSucursal = sucursal.id;
-        //citasEnvio.fecha = formatearDate(new Date());
-        citasEnvio.fecha = "2018-10-21";
-        citasEnvio.tokenAutorizacion = tokenAutorizacion;
-        citasEnvio.idUsuarioMedico = tokenAutorizacion.idUsuario;
-
-        $.ajax({
-            url: urlServicio,
-            type: 'POST',
-            data: JSON.stringify(citasEnvio),
-            dataType: 'json',
-            contentType: "application/json; charset=utf-8",
-            error: function (jqXHR, text_status, strError) {
-                alert('No se pudo conectar ' + strError);
-            },
-            timeout: 90000,
-            async: true,
-            success: function (data) {
-                codigoRespuesta = data.respuesta.codigo;
-                mensaje = data.respuesta.mensaje;
-                if (codigoRespuesta == codigoOk) {
-                    cargarCitas(data.listaAgendaPaciente);
-                } else {
-                    alert(mensaje);
-                }
-
-            }
-        });
-
-    }
 
 
 
@@ -106,6 +76,18 @@ $(document).ready(function () {
 
 
     });
+
+    function cargarFechas() {
+        var items = "";
+        for (i = 0; i < 5; i++) {
+            var newdate = new Date();
+            newdate.setDate(newdate.getDate() + i);
+            var fecha = formatearDate(newdate);
+            items = items + "<a class='dropdown-item' href='#' onclick='seleccionarFecha(\"" + fecha + "\")'>" + fecha + "</a>";
+        }
+        $("#cmbFechasItems").html(items);
+
+    }
 
 });
 
@@ -195,6 +177,51 @@ function cargarCitas(listaAgendaPaciente) {
     });
     $("#citasAcordion").html(htmlCita);
     $("#spinner").hide();
+
+}
+
+function seleccionarFecha(fecha) {
+    $("#cmbFechas").html(fecha);
+    $("#spinner").show();
+    var urlServicio = obtenerServicioWebPorCatalogo(listaServicioWeb, LISTAR_CITAS_POR_MEDICO);
+
+    citasEnvio.idSucursal = sucursal.id;
+    citasEnvio.fecha = fecha;
+    //citasEnvio.fecha = "2018-10-21";
+    citasEnvio.tokenAutorizacion = tokenAutorizacion;
+    citasEnvio.idUsuarioMedico = tokenAutorizacion.idUsuario;
+
+    $.ajax({
+        url: urlServicio,
+        type: 'POST',
+        data: JSON.stringify(citasEnvio),
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        error: function (jqXHR, text_status, strError) {
+            alert('No se pudo conectar ' + strError);
+        },
+        timeout: 90000,
+        async: true,
+        success: function (data) {
+            codigoRespuesta = data.respuesta.codigo;
+            mensaje = data.respuesta.mensaje;
+            if (codigoRespuesta == codigoOk) {
+                var lista=data.listaAgendaPaciente;
+                if(lista.length>0){
+                    cargarCitas();
+                }else{
+                    $("#spinner").hide();
+                    $("#modalSinCitas").modal('show');
+                }
+                
+            } else {
+                alert(mensaje);
+            }
+
+        }
+    });
+
+
 
 }
 
