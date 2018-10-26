@@ -20,7 +20,7 @@
 </head>
 
 <body>
-   
+
 
     <div id="panelNavegacion" class="div-alto-cien">
 
@@ -40,11 +40,14 @@
     <script type="text/javascript" src="js/constantes.js"></script>
     <script type="text/javascript" src="js/objetos.js"></script>
     <script type="text/javascript">
-        $(function () {
-            
-            $("#panelNavegacion").load("login.html");
 
-        });
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            console.log(navigator.vibrate);
+        }
+            //$("#panelNavegacion").load("login.html");
+
+
     </script>
 
 
