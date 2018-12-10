@@ -129,6 +129,7 @@ function obtenerServicioWebPorCatalogo(listaServicioWeb, codigoCatalogo) {
 
 function cargarCitas(listaAgendaPaciente) {
     var htmlCita = "";
+    alert(listaAgendaPaciente);
     $.each(listaAgendaPaciente, function (i, value) {
         agendaPaciente = value;
 
