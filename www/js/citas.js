@@ -190,8 +190,7 @@ function seleccionarFecha(fecha) {
     //citasEnvio.fecha = "2018-10-21";
     citasEnvio.tokenAutorizacion = tokenAutorizacion;
     citasEnvio.idUsuarioMedico = tokenAutorizacion.idUsuario;
-    alert(JSON.stringify(citasEnvio));
-
+   
     $.ajax({
         url: urlServicio,
         type: 'POST',
