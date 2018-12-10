@@ -129,10 +129,10 @@ function obtenerServicioWebPorCatalogo(listaServicioWeb, codigoCatalogo) {
 
 function cargarCitas(listaAgendaPaciente) {
     var htmlCita = "";
-    alert(listaAgendaPaciente);
+   
     $.each(listaAgendaPaciente, function (i, value) {
         agendaPaciente = value;
-
+       
 
         htmlCita = htmlCita + "<div class='card-header' id='heading" + i + "'>";
         htmlCita = htmlCita + "<h5 class='mb-0'>";
@@ -209,7 +209,7 @@ function seleccionarFecha(fecha) {
             if (codigoRespuesta == codigoOk) {
                 var lista=data.listaAgendaPaciente;
                 if(lista.length>0){
-                    cargarCitas();
+                    cargarCitas(lista);
                 }else{
                     $("#spinner").hide();
                     $("#modalSinCitas").modal('show');
